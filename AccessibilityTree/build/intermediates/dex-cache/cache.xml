@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/xiaoyiz/Desktop/Android/Accessibility/Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/xiaoyiz/Desktop/Android/Accessibility/Android/app/build/intermediates/pre-dexed/debug/classes-08255f3b954782f2e8e38e6ccb1c14b49e61e04e.jar" />
+    </item>
+    <item
+        jar="/Users/xiaoyiz/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/Users/xiaoyiz/Desktop/Android/Automate/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1-131ce8b42b0cf9a73276178e3d11f3d8722d75c2.jar" />
+    </item>
+    <item
+        jar="/Users/xiaoyiz/Desktop/Android/Automate/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/Users/xiaoyiz/Desktop/Android/Automate/app/build/intermediates/pre-dexed/debug/classes-faa83d048237078e0ef59c6ab83120639d2a7bde.jar" />
+    </item>
+    <item
+        jar="/Users/xiaoyiz/Desktop/Android/Accessibility/Android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/xiaoyiz/Desktop/Android/Accessibility/Android/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-c75fb1191a36bb01c3a2be4e5d35ab3aa579e610.jar" />
+    </item>
+    <item
+        jar="/Users/xiaoyiz/Desktop/Android/Automate/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/Users/xiaoyiz/Desktop/Android/Automate/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1-96bdb438bedb5483141e777271f6551d309ddc57.jar" />
+    </item>
+
+</items>
