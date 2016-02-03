@@ -1,0 +1,226 @@
+[
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
+        "source": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/design_snackbar_in.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_snackbar_in.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/res/merged/debug/anim/design_snackbar_in.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_snackbar_in.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/design_fab_in.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_fab_in.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/res/merged/debug/anim/design_fab_in.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_fab_in.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/design_snackbar_in.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_snackbar_in.xml"
+    },
+    {
+        "merged": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_popup_enter.xml",
+        "source": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_popup_enter.xml"
+    },
+    {
+        "merged": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml",
+        "source": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_snackbar_out.xml"
+    },
+    {
+        "merged": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
+        "source": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_snackbar_out.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_snackbar_out.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
+        "source": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/design_fab_in.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_fab_in.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/res/merged/debug/anim/design_snackbar_out.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_snackbar_out.xml"
+    },
+    {
+        "merged": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
+        "source": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/res/merged/debug/anim/design_fab_out.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_fab_out.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/res/merged/debug/anim/abc_grow_fade_in_from_bottom.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_grow_fade_in_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
+        "source": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_slide_in_top.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_in_top.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_fade_out.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_fade_out.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_slide_in_bottom.xml",
+        "source": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_in_bottom.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/design_fab_out.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_fab_out.xml"
+    },
+    {
+        "merged": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/design_fab_in.xml",
+        "source": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_fab_in.xml"
+    },
+    {
+        "merged": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/design_snackbar_in.xml",
+        "source": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_snackbar_in.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_slide_out_bottom.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_out_bottom.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/design_fab_out.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_fab_out.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_slide_out_top.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_slide_out_top.xml"
+    },
+    {
+        "merged": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_fade_in.xml",
+        "source": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_fade_in.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_popup_exit.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_popup_exit.xml"
+    },
+    {
+        "merged": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/abc_shrink_fade_out_from_bottom.xml",
+        "source": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/anim/abc_shrink_fade_out_from_bottom.xml"
+    },
+    {
+        "merged": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/res/merged/debug/anim/design_fab_out.xml",
+        "source": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/anim/design_fab_out.xml"
+    }
+]

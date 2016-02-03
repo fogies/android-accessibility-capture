@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
+        "source": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/src/main/res/menu/menu_main.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/src/main/res/menu/menu_main.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/src/main/res/menu/menu_main.xml"
+    },
+    {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/src/main/res/menu/menu_main.xml"
+    }
+]
