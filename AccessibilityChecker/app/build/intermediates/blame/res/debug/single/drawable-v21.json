@@ -4,6 +4,10 @@
         "source": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-v21/abc_btn_colored_material.xml"
     },
     {
+        "merged": "/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
+        "source": "/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
         "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
         "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-v21/abc_action_bar_item_background_material.xml"
     },
@@ -14,6 +18,10 @@
     {
         "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",
         "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-v21/abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/drawable-v21/abc_action_bar_item_background_material.xml",
+        "source": "/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/drawable-v21/abc_action_bar_item_background_material.xml"
     },
     {
         "merged": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/res/merged/debug/drawable-v21/abc_btn_colored_material.xml",

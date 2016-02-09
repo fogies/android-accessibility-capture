@@ -2,60 +2,60 @@
 <items version="2" >
 
     <item
-        jar="/Users/autumnljohnson/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
-        <dex dex="/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.1_386ac9587a0191017d2d7f65c9defe238907569f.jar" />
-    </item>
-    <item
-        jar="/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
-        <dex dex="/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.1.1_0162da999f080fc59eeab933facfa35aefcfc456.jar" />
-    </item>
-    <item
-        jar="/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
-        <dex dex="/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.1_6d7de7dfd27f2216a6fff0e2bcdc4ffa1f2bc80b.jar" />
-    </item>
-    <item
-        jar="/Users/autumnljohnson/.gradle/caches/modules-2/files-2.1/com.google.android.apps.common.testing.accessibility.framework/accessibility-test-framework/2.0/7837f95bdff9f797003454247fef02b78d49ae75/accessibility-test-framework-2.0.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="7837f95bdff9f797003454247fef02b78d49ae75">
-        <dex dex="/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/pre-dexed/debug/accessibility-test-framework-2.0_48a7972389c66649aa467b55f081bea58bf7a869.jar" />
-    </item>
-    <item
-        jar="/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
-        <dex dex="/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.1.1_8cfdc9659d3fbbdd5f08ffec43056a5b9cf203b0.jar" />
-    </item>
-    <item
-        jar="/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
+        jar="/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="379471b2bd17d9737c050345c08e8c7d16589784">
-        <dex dex="/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.1.1_961979b79b8c3f35fad6c666718d3e5ff9cdf1c5.jar" />
+        <dex dex="/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/pre-dexed/debug/com.android.support-design-23.1.1_df2e1e6034a1b2ba50499454ca50d96e6bdc4d83.jar" />
     </item>
     <item
-        jar="/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
-        <dex dex="/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.1.1_04a22d6c370e4a69aafd78f47cad52c94b9fa8ef.jar" />
-    </item>
-    <item
-        jar="/Users/autumnljohnson/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar"
+        jar="/Users/xiaoyiz/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="42a25dc3219429f0e5d060061f71acb49bf010a0">
-        <dex dex="/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/pre-dexed/debug/hamcrest-core-1.3_c660ab4c00950f656a62af54d9184eb474e1e624.jar" />
+        <dex dex="/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/pre-dexed/debug/hamcrest-core-1.3_ceb22b32c425a167d7c9a923547ea03815306b95.jar" />
+    </item>
+    <item
+        jar="/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/libs/internal_impl-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/pre-dexed/debug/internal_impl-23.1.1_b197db1ef61ea8942a166e459ab5b5d496dde02b.jar" />
+    </item>
+    <item
+        jar="/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="09c5e804bc67fc0580360043dff067df574a60d4">
+        <dex dex="/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-23.1.1_3995a294c089684aa3d9e169037f4812c658d221.jar" />
+    </item>
+    <item
+        jar="/Users/xiaoyiz/.gradle/caches/modules-2/files-2.1/com.google.android.apps.common.testing.accessibility.framework/accessibility-test-framework/2.0/7837f95bdff9f797003454247fef02b78d49ae75/accessibility-test-framework-2.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="7837f95bdff9f797003454247fef02b78d49ae75">
+        <dex dex="/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/pre-dexed/debug/accessibility-test-framework-2.0_dfc660c13d41aeaa5587af2941adad67aacdb20d.jar" />
+    </item>
+    <item
+        jar="/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.1.1_e928e65c7b80c6980d41ec02eb2e33cd8a8fb7e5.jar" />
+    </item>
+    <item
+        jar="/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="5c5699834e9722f1c288fea2de82725d078ba127">
+        <dex dex="/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.1.1_7958f3b1ac838ac76c2e7104ea0f509aed8eaa92.jar" />
+    </item>
+    <item
+        jar="/Users/xiaoyiz/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.1.1/support-annotations-23.1.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/pre-dexed/debug/support-annotations-23.1.1_188f56af58f2dbb2b81b44414e732d546649efd8.jar" />
     </item>
 
 </items>

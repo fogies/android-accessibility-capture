@@ -14,5 +14,9 @@
     {
         "merged": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
         "source": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/layout-sw600dp/design_layout_snackbar.xml"
+    },
+    {
+        "merged": "/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/layout-sw600dp-v13/design_layout_snackbar.xml",
+        "source": "/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/exploded-aar/com.android.support/design/23.1.1/res/layout-sw600dp/design_layout_snackbar.xml"
     }
 ]

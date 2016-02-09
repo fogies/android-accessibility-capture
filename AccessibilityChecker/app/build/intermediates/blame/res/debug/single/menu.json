@@ -12,6 +12,10 @@
         "source": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/src/main/res/menu/menu_main.xml"
     },
     {
+        "merged": "/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
+        "source": "/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/src/main/res/menu/menu_main.xml"
+    },
+    {
         "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/res/merged/debug/menu/menu_main.xml",
         "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/src/main/res/menu/menu_main.xml"
     }

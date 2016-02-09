@@ -1,15 +1,19 @@
 [
     {
-        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/ic_launcher.png",
-        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
-    },
-    {
         "merged": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/ic_launcher.png",
         "source": "/Users/autumnljohnson/AndroidStudioProjects/android-accessibility-capture/AccessibilityChecker/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
+        "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/ic_launcher.png",
+        "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/AccessibilityChecker/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
         "merged": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/ic_launcher.png",
         "source": "/Users/autumnljohnson/AndroidStudioProjects/AccessibilityServiceProject/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/ic_launcher.png",
+        "source": "/Users/xiaoyiz/Desktop/android-accessibility-capture/AccessibilityChecker/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
         "merged": "/Users/xiaoyiz/Downloads/AccessibilityChecker/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/ic_launcher.png",
