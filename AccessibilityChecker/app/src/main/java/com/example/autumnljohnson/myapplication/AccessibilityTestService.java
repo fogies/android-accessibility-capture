@@ -57,7 +57,7 @@ public class AccessibilityTestService extends AccessibilityService {
     @Override
     public boolean onUnbind(Intent intent) {
         //data.printResults();
-        Log.i("JSON_RESULT", data.resultsToJSON());
+        Log.i("CHECKER_JSON_RESULT", data.resultsToJSON());
         return super.onUnbind(intent);
     }
 
@@ -80,32 +80,37 @@ public class AccessibilityTestService extends AccessibilityService {
             //                                    AccessibilityNodeInfoUtils.getRoot(currNodeCompat));
             //AccessibilityNodeInfo rootNode = rootNodeCompat.
             try {
+                /*
                 Log.d(TAG, "event type : " + e.getEventType());
                 Log.d(TAG, "content description : " + e.getContentDescription());
                 Log.d(TAG, "package name : " + e.getPackageName());
                 Log.d(TAG, "source : " + e.getSource());
                 Log.d(TAG, "window id : " + e.getWindowId());
                 Log.d(TAG, "event time : " + e.getEventTime());
-
+                */
             } catch ( Exception e2 ) {
                 Log.d(TAG, e2.getMessage());
             }
+
 
             // get the number of nodes in the hierarchy (number of nodes that tests will be run on)
             int numNodes = AccessibilityNodeInfoUtils.searchAllFromBfs(getApplicationContext(),
                     new AccessibilityNodeInfoCompat(node), WIDE_OPEN_FILTER).size();
 
-            Set<AccessibilityInfoHierarchyCheck> checks =
-                    AccessibilityCheckPreset.getInfoChecksForPreset(AccessibilityCheckPreset.VERSION_2_0_CHECKS);
+            if (e.getPackageName().equals("com.ecg.close5")) {
+                Log.d(TAG,"Wow");
 
-            // 6 total checks (one is Warnings, other are Errors)
-            for (AccessibilityInfoHierarchyCheck check : checks) {
-                try {
-                    List<AccessibilityInfoCheckResult> checkResults =
-                            check.runCheckOnInfoHierarchy(node, getApplicationContext());
-                    data.storeCheckResults(e.getPackageName(), checkResults, getCheckType(check), numNodes);
-                } catch (Exception ex) { // Probably a DuplicateClickableBounds error
-                    Log.d(TAG, ex.getMessage());
+                Set<AccessibilityInfoHierarchyCheck> checks = AccessibilityCheckPreset.getInfoChecksForPreset(AccessibilityCheckPreset.VERSION_2_0_CHECKS);
+
+                // 6 total checks (one is Warnings, other are Errors)
+                for (AccessibilityInfoHierarchyCheck check : checks) {
+                    try {
+                        List<AccessibilityInfoCheckResult> checkResults =
+                                check.runCheckOnInfoHierarchy(node, getApplicationContext());
+                        data.storeCheckResults(e.getPackageName()+", screen "+Integer.toString(e.getWindowId()), checkResults, getCheckType(check), numNodes);
+                    } catch (Exception ex) { // Probably a DuplicateClickableBounds error
+                        Log.d(TAG, ex.getMessage());
+                    }
                 }
             }
 
