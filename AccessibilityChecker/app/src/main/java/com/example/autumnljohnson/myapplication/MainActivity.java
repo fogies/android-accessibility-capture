@@ -3,33 +3,37 @@ package com.example.autumnljohnson.myapplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Intent intentToAccessibility = new Intent(this, AccessibilityTestService.class); // this was me
-        startService(intentToAccessibility); // this was me
-
         setContentView(R.layout.activity_main);
+        final Intent intentToAccessibility = new Intent(this, AccessibilityTestService.class); // this was me
+
+        this.findViewById(R.id.setPackageButton).setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View arg0) {
+                stopService(intentToAccessibility); // this was me
+                EditText mEdit = (EditText)findViewById(R.id.packageName);
+                String packageName = mEdit.getText().toString();
+                intentToAccessibility.putExtra("packageName", packageName);
+                startService(intentToAccessibility); // this was me
+            }
+        });
 
         this.findViewById(R.id.accessibilitySettingButton).setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View arg0) {
-                Intent killIntent = new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS);
-                startActivity(killIntent);
+                startActivity(new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS));
             }
         });
 

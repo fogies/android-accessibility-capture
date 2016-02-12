@@ -2,12 +2,18 @@ package com.example.autumnljohnson.myapplication;
 
 import android.accessibilityservice.AccessibilityService;
 import android.accessibilityservice.AccessibilityServiceInfo;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.os.Bundle;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.EditText;
+
+import com.google.android.apps.common.testing.accessibility.framework.EditableContentDescInfoCheck;
 import com.googlecode.eyesfree.utils.AccessibilityNodeInfoUtils;
 
 import com.google.android.apps.common.testing.accessibility.framework.AccessibilityInfoHierarchyCheck;
@@ -30,8 +36,16 @@ import java.util.Set;
 
 public class AccessibilityTestService extends AccessibilityService {
 
+    public String packageName = "";
     private static final String TAG = "AccessibilityService";
     private static AccessibilityTestData data;
+
+    @Override
+    public void onStart(Intent intent, int startId) {
+        super.onStart(intent, startId);
+        Bundle extras = intent.getExtras();
+        packageName = (String) extras.get("packageName");
+    }
 
     @Override
     protected void onServiceConnected() {
@@ -57,7 +71,7 @@ public class AccessibilityTestService extends AccessibilityService {
     @Override
     public boolean onUnbind(Intent intent) {
         //data.printResults();
-        Log.i("CHECKER_JSON_RESULT", data.resultsToJSON());
+        Log.i(TAG, "CHECKER_RESULT -> " + data.resultsToJSON());
         return super.onUnbind(intent);
     }
 
@@ -74,32 +88,17 @@ public class AccessibilityTestService extends AccessibilityService {
         // node that can be used to traverse the window content, represented as a tree of such objects.
         AccessibilityNodeInfo node = e.getSource(); // should I be gettin the root?
 
-        if (node != null) { // node.getPackageName().equals("org.collegeboard.qotd")
-            //AccessibilityNodeInfoCompat currNodeCompat = new AccessibilityNodeInfoCompat(node);
-            //AccessibilityNodeInfoCompat rootNodeCompat = new AccessibilityNodeInfoCompat(
-            //                                    AccessibilityNodeInfoUtils.getRoot(currNodeCompat));
-            //AccessibilityNodeInfo rootNode = rootNodeCompat.
-            try {
-                /*
-                Log.d(TAG, "event type : " + e.getEventType());
-                Log.d(TAG, "content description : " + e.getContentDescription());
-                Log.d(TAG, "package name : " + e.getPackageName());
-                Log.d(TAG, "source : " + e.getSource());
-                Log.d(TAG, "window id : " + e.getWindowId());
-                Log.d(TAG, "event time : " + e.getEventTime());
-                */
-            } catch ( Exception e2 ) {
-                Log.d(TAG, e2.getMessage());
-            }
-
-
+        if (node != null) {
             // get the number of nodes in the hierarchy (number of nodes that tests will be run on)
             int numNodes = AccessibilityNodeInfoUtils.searchAllFromBfs(getApplicationContext(),
                     new AccessibilityNodeInfoCompat(node), WIDE_OPEN_FILTER).size();
 
-            if (e.getPackageName().equals("com.ecg.close5")) {
+            if (e.getPackageName().equals(packageName)) {
                 String name = e.getPackageName()+", screen "+Integer.toString(e.getWindowId());
-                printAllNodes(getRootInActiveWindow(), name);
+                Log.i(TAG, "--------------");
+                Log.i(TAG, "Name -> " + name);
+
+                printAllNodes(getRootInActiveWindow(), null);
 
                 Set<AccessibilityInfoHierarchyCheck> checks = AccessibilityCheckPreset.getInfoChecksForPreset(AccessibilityCheckPreset.VERSION_2_0_CHECKS);
 
@@ -108,7 +107,9 @@ public class AccessibilityTestService extends AccessibilityService {
                     try {
                         List<AccessibilityInfoCheckResult> checkResults =
                                 check.runCheckOnInfoHierarchy(node, getApplicationContext());
-                        data.storeCheckResults(name, checkResults, getCheckType(check), numNodes);
+                        data.storeCheckResults(e.getPackageName(), checkResults, getCheckType(check), numNodes);
+                        Log.i(TAG, "CHECKER_RESULT -> " + data.resultsToJSON());
+                        data = new AccessibilityTestData();
                     } catch (Exception ex) { // Probably a DuplicateClickableBounds error
                         Log.d(TAG, ex.getMessage());
                     }
@@ -147,7 +148,22 @@ public class AccessibilityTestService extends AccessibilityService {
             return AccessibilityCheckType.EDITABLE_CONTENT_DESC;
         }
     }
-
+/*
+    private String getCheckType(AccessibilityInfoHierarchyCheck check) {
+        if (check instanceof SpeakableTextPresentInfoCheck) {
+            return "SPEAKABLE_TEXT_PRESENT";
+        } else if (check instanceof ClickableSpanInfoCheck) {
+            return "CLICKABLE_SPAN";
+        } else if (check instanceof DuplicateClickableBoundsInfoCheck) {
+            return "DUPLICATE_CLICKABLE_BOUNDS";
+        } else if (check instanceof TouchTargetSizeInfoCheck) {
+            return "TOUCH_TARGET_SIZE";
+        } else if (check instanceof EditableContentDescInfoCheck) {
+            return "EDITABLE_CONTENT_DESC";
+        }
+        return "None";
+    }
+*/
     public enum AccessibilityCheckType {
         SPEAKABLE_TEXT_PRESENT,
         CLICKABLE_SPAN,
@@ -156,65 +172,20 @@ public class AccessibilityTestService extends AccessibilityService {
         TOUCH_TARGET_SIZE;
     }
 
-    private void printAllNodes(AccessibilityNodeInfo info, String name) {
+    private void printAllNodes(AccessibilityNodeInfo info, AccessibilityNodeInfo parent) {
         if (info == null) return;
         if (info.getChildCount() == 0) {
-            //if(info.getClassName().toString().equals("android.widget.EditText")) {
-            //    Log.i(TAG, "Text: " + info.getText());
-            //}
-            //Log.i(TAG, "Type: " + info.getClassName());
-            //Log.i(TAG, "Text: " + info.getText());
-            Log.i(TAG, "TREE_RESULT: Name = " + name + " -> " + info.toString());
-            /*
-            buttonRect = new Rect();
-            info.getBoundsInParent(buttonRect);
-            if (buttonRect.contains(84,84)) {}
-            Log.i(TAG, "Center：(" + tempRect.centerX() + "," + tempRect.centerY() + ")");
-            Log.i(TAG, "Height and Width：" + tempRect.height() + "," + tempRect.width());
-            List<AccessibilityNodeInfo.AccessibilityAction> temp = info.getActionList();
-            for (AccessibilityNodeInfo.AccessibilityAction t: temp) {
-                Log.i(TAG, "Action: "+t);
+            if (parent != null) {
+                Log.i(TAG, "TREE_RESULT -> " + "Parent = " + parent.toString());
+            } else {
+                Log.i(TAG, "TREE_RESULT -> " + "Parent = null");
             }
-              */
-
-            //if (tempRect.centerX() == 84 && tempRect.centerY() == 84 && tempRect.height() == 168 && tempRect.width() == 168) {
-            //    Log.i(TAG, "Yoooooo");
-            //info.performAction(AccessibilityNodeInfo.ACTION_CLICK);
-            //}
-/*
-            if (info.getText() != null && info.getText().toString().contains("Price")) {
-                ClipboardManager clipboard = (ClipboardManager) getApplicationContext().getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clip = ClipData.newPlainText("label", String.valueOf(price).subSequence(0,1));
-                clipboard.setPrimaryClip(clip);
-                info.performAction(AccessibilityNodeInfo.ACTION_PASTE);
-                if (price >= 10) {
-                    clip = ClipData.newPlainText("label", String.valueOf(price).substring(1));
-                    clipboard.setPrimaryClip(clip);
-                    info.performAction(AccessibilityNodeInfo.ACTION_PASTE);
-                }
-            }
-            if (info.getText() != null && info.getText().toString().equals("$4")) {
-                ClipboardManager clipboard = (ClipboardManager) getApplicationContext().getSystemService(Context.CLIPBOARD_SERVICE);
-                ClipData clip = ClipData.newPlainText("label", "80");
-                clipboard.setPrimaryClip(clip);
-                info.performAction(AccessibilityNodeInfo.ACTION_PASTE);
-            }
-            */
-
+            Log.i(TAG, "TREE_RESULT -> " + "Current Node = " + info.toString());
         } else {
             //Log.i(TAG, "Parent: " + info.toString());
             //Log.i(TAG, "A parent node");
-            //info.performAction(AccessibilityNodeInfo.ACTION_SCROLL_FORWARD);
             for (int i = 0; i < info.getChildCount(); i++) {
-                printAllNodes(info.getChild(i), name);
-                    /*
-                if(info.getChild(i)!=null){
-                    if(info.getChild(i).getText() != null && info.getChild(i).getText().toString().equals("Price")) {
-                        Log.i(TAG, "Wow");
-                        //info.performAction(AccessibilityNodeInfo.ACTION_CLICK);
-                    }
-                    printAllNodes(info.getChild(i));
-                }*/
+                printAllNodes(info.getChild(i), info);
             }
         }
     }

@@ -12,9 +12,25 @@ tools:context=".MainActivity" >
     android:id="@+id/accessibilitySettingButton"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:text="Activate Accessibility"
     android:layout_alignParentTop="true"
-    android:layout_centerHorizontal="true"
-    android:text="Activate Accessibility" />
+    android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/packageName"
+        android:layout_below="@+id/accessibilitySettingButton"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/accessibilitySettingButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set Package"
+        android:id="@+id/setPackageButton"
+        android:layout_below="@+id/packageName"
+        android:layout_alignParentStart="true" />
 
 
 </RelativeLayout>
