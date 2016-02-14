@@ -6,6 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.util.Log;
@@ -86,7 +87,7 @@ public class AccessibilityTestService extends AccessibilityService {
 
         Log.d(TAG, "on accessibility event");
         // node that can be used to traverse the window content, represented as a tree of such objects.
-        AccessibilityNodeInfo node = e.getSource(); // should I be gettin the root?
+        AccessibilityNodeInfo node = getRootInActiveWindow();
 
         if (node != null) {
             // get the number of nodes in the hierarchy (number of nodes that tests will be run on)
@@ -148,22 +149,7 @@ public class AccessibilityTestService extends AccessibilityService {
             return AccessibilityCheckType.EDITABLE_CONTENT_DESC;
         }
     }
-/*
-    private String getCheckType(AccessibilityInfoHierarchyCheck check) {
-        if (check instanceof SpeakableTextPresentInfoCheck) {
-            return "SPEAKABLE_TEXT_PRESENT";
-        } else if (check instanceof ClickableSpanInfoCheck) {
-            return "CLICKABLE_SPAN";
-        } else if (check instanceof DuplicateClickableBoundsInfoCheck) {
-            return "DUPLICATE_CLICKABLE_BOUNDS";
-        } else if (check instanceof TouchTargetSizeInfoCheck) {
-            return "TOUCH_TARGET_SIZE";
-        } else if (check instanceof EditableContentDescInfoCheck) {
-            return "EDITABLE_CONTENT_DESC";
-        }
-        return "None";
-    }
-*/
+
     public enum AccessibilityCheckType {
         SPEAKABLE_TEXT_PRESENT,
         CLICKABLE_SPAN,
@@ -175,15 +161,11 @@ public class AccessibilityTestService extends AccessibilityService {
     private void printAllNodes(AccessibilityNodeInfo info, AccessibilityNodeInfo parent) {
         if (info == null) return;
         if (info.getChildCount() == 0) {
-            if (parent != null) {
-                Log.i(TAG, "TREE_RESULT -> " + "Parent = " + parent.toString());
-            } else {
-                Log.i(TAG, "TREE_RESULT -> " + "Parent = null");
-            }
             Log.i(TAG, "TREE_RESULT -> " + "Current Node = " + info.toString());
+            Rect bounds = new Rect();
+            info.getBoundsInScreen(bounds);
+            Log.i(TAG, "Node Center Coordinate -> x = " + bounds.centerX() + ", y = " + bounds.centerY());
         } else {
-            //Log.i(TAG, "Parent: " + info.toString());
-            //Log.i(TAG, "A parent node");
             for (int i = 0; i < info.getChildCount(); i++) {
                 printAllNodes(info.getChild(i), info);
             }
