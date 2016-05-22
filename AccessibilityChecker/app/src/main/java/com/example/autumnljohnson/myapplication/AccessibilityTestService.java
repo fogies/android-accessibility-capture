@@ -40,6 +40,8 @@ public class AccessibilityTestService extends AccessibilityService {
     public String packageName = "";
     private static final String TAG = "AccessibilityService";
     private static AccessibilityTestData data;
+    private BroadcastReceiver yourReceiver;
+    private static final String ACTION="xiaoyiz.triggerIntent";
 
     @Override
     public void onStart(Intent intent, int startId) {
@@ -57,16 +59,31 @@ public class AccessibilityTestService extends AccessibilityService {
         } catch (Exception e) {
             Log.d(TAG, e.getMessage());
         }
-        //AccessibilityServiceInfo info = new AccessibilityServiceInfo();
-       // info.eventTypes = AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED |
-              //            AccessibilityEvent.TYPE_WINDOW_CONTENT_CHANGED |
-               //           AccessibilityEvent.TYPE_WINDOW_STATE_CHANGED;
-        //this.setServiceInfo(info);
+    }
 
-        //AccessibilityServiceInfo info = new AccessibilityServiceInfo();
-        // String[] packages = {"org.collegeboard.qotd"};
-        // info.packageNames = packages;
-        // setServiceInfo(info);
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        Log.i("Xiaoyi", "Wow");
+        final IntentFilter theFilter = new IntentFilter();
+        theFilter.addAction(ACTION);
+        this.yourReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                String output = intent.getStringExtra("actionName");
+                Log.i("Xiaoyi", output);
+            }
+        };
+        // Registers the receiver so that your service will listen for
+        // broadcasts
+        this.registerReceiver(this.yourReceiver, theFilter);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        // Do not forget to unregister the receiver!!!
+        this.unregisterReceiver(this.yourReceiver);
     }
 
     @Override
@@ -85,6 +102,9 @@ public class AccessibilityTestService extends AccessibilityService {
     @Override
     public void onAccessibilityEvent(AccessibilityEvent e) {
 
+        if (e.getPackageName() == null) {
+            return;
+        }
         Log.d(TAG, "on accessibility event");
         // node that can be used to traverse the window content, represented as a tree of such objects.
         AccessibilityNodeInfo node = getRootInActiveWindow();
