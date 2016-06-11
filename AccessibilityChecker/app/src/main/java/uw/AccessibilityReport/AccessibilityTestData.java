@@ -1,6 +1,4 @@
-package com.example.autumnljohnson.myapplication;
-
-import android.util.Log;
+package uw.AccessibilityReport;
 
 import com.google.android.apps.common.testing.accessibility.framework.AccessibilityInfoCheckResult;
 
@@ -11,9 +9,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by autumnljohnson on 1/18/16.
- */
 public class AccessibilityTestData {
     Map<CharSequence, PackageChecks> packageResults; //(package name) -> (accessibility check results)
 

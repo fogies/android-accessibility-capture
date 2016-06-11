@@ -1,7 +1,7 @@
-package com.example.autumnljohnson.myapplication;
+package uw.AccessibilityReport;
 
 import android.util.Log;
-import com.example.autumnljohnson.myapplication.AccessibilityTestService.AccessibilityCheckType;
+import uw.AccessibilityReport.AccessibilityTestService.AccessibilityCheckType;
 
 import com.google.android.apps.common.testing.accessibility.framework.AccessibilityInfoCheckResult;
 
@@ -13,10 +13,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by autumnljohnson on 1/15/16.
- *
- */
+
 public class PackageChecks {
     public static final String TAG = "ASResults";
     public Map<AccessibilityCheckType, AccessibilityCheckData> results;

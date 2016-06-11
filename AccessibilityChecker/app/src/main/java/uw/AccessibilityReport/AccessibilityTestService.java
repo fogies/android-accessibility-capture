@@ -1,39 +1,33 @@
-package com.example.autumnljohnson.myapplication;
+package uw.AccessibilityReport;
 
 import android.accessibilityservice.AccessibilityService;
-import android.accessibilityservice.AccessibilityServiceInfo;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Rect;
-import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.EditText;
 
-import com.google.android.apps.common.testing.accessibility.framework.EditableContentDescInfoCheck;
 import com.googlecode.eyesfree.utils.AccessibilityNodeInfoUtils;
 
 import com.google.android.apps.common.testing.accessibility.framework.AccessibilityInfoHierarchyCheck;
 import com.google.android.apps.common.testing.accessibility.framework.AccessibilityCheckPreset;
 import com.google.android.apps.common.testing.accessibility.framework.AccessibilityInfoCheckResult;
-import com.google.android.apps.common.testing.accessibility.framework.AccessibilityInfoHierarchyCheck;
 import com.google.android.apps.common.testing.accessibility.framework.ClickableSpanInfoCheck;
 import com.google.android.apps.common.testing.accessibility.framework.DuplicateClickableBoundsInfoCheck;
 import com.google.android.apps.common.testing.accessibility.framework.SpeakableTextPresentInfoCheck;
 import com.google.android.apps.common.testing.accessibility.framework.TouchTargetSizeInfoCheck;
-import com.googlecode.eyesfree.utils.AccessibilityNodeInfoUtils;
 import com.googlecode.eyesfree.utils.NodeFilter;
 
-import java.util.LinkedList;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 import java.util.Set;
-/**
- * Created by Autumn Johnson
- */
 
 public class AccessibilityTestService extends AccessibilityService {
 
@@ -112,11 +106,12 @@ public class AccessibilityTestService extends AccessibilityService {
 
         int numNodes = AccessibilityNodeInfoUtils.searchAllFromBfs(getApplicationContext(),
                 new AccessibilityNodeInfoCompat(node), WIDE_OPEN_FILTER).size();
+        Log.i(TAG, ""+numNodes);
         Set<AccessibilityInfoHierarchyCheck> checks =
-                AccessibilityCheckPreset.getInfoChecksForPreset(AccessibilityCheckPreset.VERSION_2_0_CHECKS);
+                AccessibilityCheckPreset.getInfoChecksForPreset(AccessibilityCheckPreset.LATEST);
 
         // 6 total checks (one is Warnings, other are Errors)
-        for (AccessibilityInfoHierarchyCheck check : checks) {
+        for (AccessibilityInfoHierarchyCheck check: checks) {
             try {
                 List<AccessibilityInfoCheckResult> checkResults =
                         check.runCheckOnInfoHierarchy(node, getApplicationContext());
@@ -129,8 +124,26 @@ public class AccessibilityTestService extends AccessibilityService {
         }
     }
 
+    public void writeToFile(String folder, String fileName, String content) {
+        File path = new File(getApplicationContext().getExternalFilesDir(null), folder);
+        Log.i(TAG, path.toString());
+        File file = new File(path, fileName);
+        FileOutputStream stream;
+        try {
+            stream = new FileOutputStream(file);
+            try {
+                stream.write(content.getBytes());
+            } catch(IOException ie) {
+            } finally {
+                try { stream.close(); } catch (IOException ie) {
+                }
+            }
+        } catch(IOException ie) {}
+    }
+
     public void pullAllErrors() {
-        Log.i(TAG, getApplicationContext().getExternalFilesDir(null).toString());
+        writeToFile("Errors", "1", "");
+        printAllNodes(getRootInActiveWindow(), null);
     }
 
     @Override
@@ -149,7 +162,6 @@ public class AccessibilityTestService extends AccessibilityService {
 
     @Override
     public void onInterrupt() {
-        data.printResults();
     }
 
     @Override
@@ -238,6 +250,7 @@ public class AccessibilityTestService extends AccessibilityService {
             Rect bounds = new Rect();
             info.getBoundsInScreen(bounds);
             Log.i(TAG, "Node Center Coordinate -> x = " + bounds.centerX() + ", y = " + bounds.centerY());
+            if (parent != null) Log.i(TAG, "Parent Node is " + parent.toString());
         } else {
             Log.i(TAG, "TREE_RESULT -> " + "Non-leaf Node = " + info.toString());
             Rect bounds = new Rect();

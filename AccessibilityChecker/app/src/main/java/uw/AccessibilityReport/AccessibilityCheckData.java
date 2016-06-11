@@ -1,21 +1,15 @@
-package com.example.autumnljohnson.myapplication;
+package uw.AccessibilityReport;
 
-import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.util.Log;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import com.example.autumnljohnson.myapplication.AccessibilityTestService.AccessibilityCheckType;
+import uw.AccessibilityReport.AccessibilityTestService.AccessibilityCheckType;
 import com.google.android.apps.common.testing.accessibility.framework.AccessibilityCheckResult;
 import com.google.android.apps.common.testing.accessibility.framework.AccessibilityCheckResultUtils;
 import com.google.android.apps.common.testing.accessibility.framework.AccessibilityInfoCheckResult;
-import com.google.android.apps.common.testing.accessibility.framework.TouchTargetSizeInfoCheck;
-import com.googlecode.eyesfree.utils.AccessibilityNodeInfoUtils;
 
-/**
- * Created by autumnljohnson on 1/18/16.
- */
 public class AccessibilityCheckData {
     public static final String TAG = "ASResults";
 
@@ -38,7 +32,7 @@ public class AccessibilityCheckData {
             // parse error message to keep consistent
             if (checkType == AccessibilityCheckType.TOUCH_TARGET_SIZE) {
                 int index = errorMessage.toString().indexOf("Actual");
-                errorMessage = errorMessage.subSequence(0, index - 1);
+                errorMessage = error.getInfo().toString() + errorMessage.subSequence(0, index - 1);
             }
 
             if (!messageToCounts.containsKey(error.getMessage())) {
