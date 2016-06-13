@@ -6,12 +6,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Rect;
-import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.util.Log;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 
+import com.google.android.apps.common.testing.accessibility.framework.AccessibilityCheckResult;
+import com.google.android.apps.common.testing.accessibility.framework.AccessibilityCheckResultUtils;
 import com.googlecode.eyesfree.utils.AccessibilityNodeInfoUtils;
 
 import com.google.android.apps.common.testing.accessibility.framework.AccessibilityInfoHierarchyCheck;
@@ -26,7 +28,12 @@ import com.googlecode.eyesfree.utils.NodeFilter;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Set;
 
 public class AccessibilityTestService extends AccessibilityService {
@@ -37,14 +44,7 @@ public class AccessibilityTestService extends AccessibilityService {
     private BroadcastReceiver receiver_set_package;
     private BroadcastReceiver receiver_pull_current_tree;
     private BroadcastReceiver receiver_pull_current_errors;
-    /*
-    @Override
-    public void onStart(Intent intent, int startId) {
-        super.onStart(intent, startId);
-        Bundle extras = intent.getExtras();
-        packageName = (String) extras.get("packageName");
-    }
-    */
+    private BroadcastReceiver receiver_pull_element_info;
 
     @Override
     protected void onServiceConnected() {
@@ -60,11 +60,13 @@ public class AccessibilityTestService extends AccessibilityService {
     @Override
     public void onCreate() {
         super.onCreate();
+
         final IntentFilter filter_set_package = new IntentFilter();
         filter_set_package.addAction("xiaoyiz.setPackage");
         receiver_set_package = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
+                Log.i(TAG, "setPackage");
                 packageName = intent.getStringExtra("packageName");
                 Log.i(TAG, "Set Package:" + packageName);
             }
@@ -76,7 +78,7 @@ public class AccessibilityTestService extends AccessibilityService {
         receiver_pull_current_tree = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                Log.i(TAG, "Pull Current Tree:");
+                Log.i(TAG, "pullCurrentTree");
                 pullCurrentTree();
             }
         };
@@ -87,12 +89,91 @@ public class AccessibilityTestService extends AccessibilityService {
         receiver_pull_current_errors = new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                Log.i(TAG, "Pull Current Errors:");
+                Log.i(TAG, "pullCurrentErrors");
                 pullCurrentErrors();
-                pullAllErrors();
             }
         };
         this.registerReceiver(receiver_pull_current_errors, filter_pull_current_errors);
+
+        final IntentFilter filter_pull_element_info = new IntentFilter();
+        filter_pull_element_info.addAction("xiaoyiz.pullElementInfo");
+        receiver_pull_element_info = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                Log.i(TAG, "pullElementInfo");
+                pullElementInfo(intent);
+            }
+        };
+        this.registerReceiver(receiver_pull_element_info, filter_pull_element_info);
+    }
+
+    public void pullElementInfo(Intent intent) {
+        String text = intent.getStringExtra("text");
+        String viewId = intent.getStringExtra("viewId");
+        String altText = intent.getStringExtra("altText");
+        String locationX = intent.getStringExtra("locationX");
+        String locationY = intent.getStringExtra("locationY");
+
+        if (text != null) {
+            List<AccessibilityNodeInfo> results = getRootInActiveWindow().findAccessibilityNodeInfosByText(text);
+            for (AccessibilityNodeInfo result: results) {
+                Log.i(TAG, "Find Node: " + result.toString());
+            }
+            return;
+        } else if (viewId != null) {
+            List<AccessibilityNodeInfo> results = getRootInActiveWindow().findAccessibilityNodeInfosByViewId(viewId);
+            for (AccessibilityNodeInfo result: results) {
+                Log.i(TAG, "Find Node: " + result.toString());
+            }
+            return;
+        } else if (altText != null) {
+            ArrayList<AccessibilityNodeInfo> results = new ArrayList<>();
+            getAccessibilityNodeByAltText(altText, getRootInActiveWindow(), results);
+            for (AccessibilityNodeInfo result: results) {
+                Log.i(TAG, "Find Node: " + result.toString());
+            }
+            return;
+        } else if (locationX != null && locationY != null){
+            ArrayList<AccessibilityNodeInfo> results = new ArrayList<>();
+            getAccessibilityNodeByLocation(Integer.parseInt(locationX), Integer.parseInt(locationY), getRootInActiveWindow(), results);
+            for (AccessibilityNodeInfo result: results) {
+                Log.i(TAG, "Find Node: " + result.toString());
+            }
+            return;
+        }
+        Log.i(TAG, "Node Not Found");
+    }
+
+    public void getAccessibilityNodeByAltText(String altText, AccessibilityNodeInfo node, ArrayList<AccessibilityNodeInfo> results) {
+        if (node == null) return;
+
+        if (node.getChildCount() == 0) {
+            if (node.getContentDescription() != null
+                    && node.getContentDescription().equals(altText)) results.add(node);
+        } else {
+            if (node.getContentDescription() != null
+                    && node.getContentDescription().equals(altText)) results.add(node);
+            for (int i = 0; i < node.getChildCount(); i++) {
+                getAccessibilityNodeByAltText(altText, node.getChild(i), results);
+            }
+        }
+    }
+
+    public void getAccessibilityNodeByLocation(int x, int y, AccessibilityNodeInfo node, ArrayList<AccessibilityNodeInfo> results) {
+        if (node == null) return;
+
+        if (node.getChildCount() == 0) {
+            Rect buttonRect = new Rect();
+            node.getBoundsInScreen(buttonRect);
+            if (buttonRect.contains(x, y)) results.add(node);
+        } else {
+            Rect buttonRect = new Rect();
+            node.getBoundsInScreen(buttonRect);
+            if (buttonRect.contains(x, y)) results.add(node);
+            for (int i = 0; i < node.getChildCount(); i++) {
+                getAccessibilityNodeByLocation(x, y, node.getChild(i), results);
+            }
+        }
     }
 
     public void pullCurrentTree() {
@@ -106,21 +187,34 @@ public class AccessibilityTestService extends AccessibilityService {
 
         int numNodes = AccessibilityNodeInfoUtils.searchAllFromBfs(getApplicationContext(),
                 new AccessibilityNodeInfoCompat(node), WIDE_OPEN_FILTER).size();
-        Log.i(TAG, ""+numNodes);
+        Log.i(TAG, "Number of nodes on screen = "+numNodes);
+
         Set<AccessibilityInfoHierarchyCheck> checks =
                 AccessibilityCheckPreset.getInfoChecksForPreset(AccessibilityCheckPreset.LATEST);
 
-        // 6 total checks (one is Warnings, other are Errors)
-        for (AccessibilityInfoHierarchyCheck check: checks) {
-            try {
-                List<AccessibilityInfoCheckResult> checkResults =
-                        check.runCheckOnInfoHierarchy(node, getApplicationContext());
-                data.storeCheckResults(packageName, checkResults, getCheckType(check), numNodes);
-                Log.i(TAG, "CHECKER_RESULT -> " + data.resultsToJSON());
-                data = new AccessibilityTestData();
-            } catch (Exception ex) { // Probably a DuplicateClickableBounds error
-                Log.d(TAG, ex.getMessage());
-            }
+        List<AccessibilityInfoCheckResult> results = new LinkedList<AccessibilityInfoCheckResult>();
+        for (AccessibilityInfoHierarchyCheck check : checks) {
+            results.addAll(check.runCheckOnInfoHierarchy(node, this));
+        }
+        /*
+        for (AccessibilityInfoCheckResult result: results) {
+            Log.i(TAG, result.getInfo().toString());
+            Log.i(TAG, result.getSourceCheckClass().toString());
+            Log.i(TAG, result.getMessage().toString());
+            Log.i(TAG, "----------");
+        }
+        */
+
+        List<AccessibilityInfoCheckResult> errors =
+                AccessibilityCheckResultUtils.getResultsForType(results,
+                        AccessibilityCheckResult.AccessibilityCheckResultType.ERROR);
+
+        for (AccessibilityInfoCheckResult error:errors) {
+            Log.i(TAG, error.getInfo().toString());
+            Log.i(TAG, error.getSourceCheckClass().toString());
+            Log.i(TAG, error.getMessage().toString());
+            Log.i(TAG, error.getType().toString());
+            Log.i(TAG, "----------");
         }
     }
 
@@ -141,17 +235,13 @@ public class AccessibilityTestService extends AccessibilityService {
         } catch(IOException ie) {}
     }
 
-    public void pullAllErrors() {
-        writeToFile("Errors", "1", "");
-        printAllNodes(getRootInActiveWindow(), null);
-    }
-
     @Override
     public void onDestroy() {
         super.onDestroy();
         this.unregisterReceiver(receiver_set_package);
         this.unregisterReceiver(receiver_pull_current_tree);
         this.unregisterReceiver(receiver_pull_current_errors);
+        this.unregisterReceiver(receiver_pull_element_info);
     }
 
     @Override
