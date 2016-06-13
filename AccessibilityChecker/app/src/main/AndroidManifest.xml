@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name="uw.AccessibilityReport.MainActivity"
-            android:label="Accessibility Service"
+            android:label="Accessibility Report"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
