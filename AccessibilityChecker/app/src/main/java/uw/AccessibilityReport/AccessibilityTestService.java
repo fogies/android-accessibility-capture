@@ -38,7 +38,7 @@ import java.util.Set;
 
 public class AccessibilityTestService extends AccessibilityService {
 
-    public String packageName = "";
+    public String packageName;
     private static final String TAG = "AccessibilityService";
     private static AccessibilityTestData data;
     private BroadcastReceiver receiver_set_package;
@@ -79,7 +79,7 @@ public class AccessibilityTestService extends AccessibilityService {
             @Override
             public void onReceive(Context context, Intent intent) {
                 Log.i(TAG, "pullCurrentTree");
-                pullCurrentTree();
+                pullCurrentTree(intent.getStringExtra("fileName"));
             }
         };
         this.registerReceiver(receiver_pull_current_tree, filter_pull_current_tree);
@@ -90,7 +90,7 @@ public class AccessibilityTestService extends AccessibilityService {
             @Override
             public void onReceive(Context context, Intent intent) {
                 Log.i(TAG, "pullCurrentErrors");
-                pullCurrentErrors();
+                pullCurrentErrors(intent.getStringExtra("fileName"));
             }
         };
         this.registerReceiver(receiver_pull_current_errors, filter_pull_current_errors);
@@ -176,13 +176,41 @@ public class AccessibilityTestService extends AccessibilityService {
         }
     }
 
-    public void pullCurrentTree() {
-        AccessibilityNodeInfo node = getRootInActiveWindow();
-        if (node == null) return;
-        printAllNodes(node, null);
+    public void printAllNodes(AccessibilityNodeInfo info, AccessibilityNodeInfo parent, ArrayList<AccessibilityNodeInfo> results) {
+        if (info == null) return;
+        if (info.getChildCount() == 0) {
+            results.add(info);
+            Log.i(TAG, "TREE_RESULT -> " + "Leaf Node = " + info.toString());
+            Rect bounds = new Rect();
+            info.getBoundsInScreen(bounds);
+            Log.i(TAG, "Node Center Coordinate -> x = " + bounds.centerX() + ", y = " + bounds.centerY());
+            if (parent != null) Log.i(TAG, "Parent Node is " + parent.toString());
+        } else {
+            results.add(info);
+            Log.i(TAG, "TREE_RESULT -> " + "Non-leaf Node = " + info.toString());
+            Rect bounds = new Rect();
+            info.getBoundsInScreen(bounds);
+            Log.i(TAG, "Node Center Coordinate -> x = " + bounds.centerX() + ", y = " + bounds.centerY());
+            for (int i = 0; i < info.getChildCount(); i++) {
+                printAllNodes(info.getChild(i), info, results);
+            }
+        }
     }
 
-    public void pullCurrentErrors() {
+    public void pullCurrentTree(String fileName) {
+        AccessibilityNodeInfo node = getRootInActiveWindow();
+        if (node == null) return;
+        ArrayList<AccessibilityNodeInfo> results = new ArrayList<>();
+        printAllNodes(node, null, results);
+        String resultString = "";
+        for (AccessibilityNodeInfo result:results) {
+            resultString += result.toString();
+            resultString += '\n';
+        }
+        if (fileName!=null) writeToFile("Tree", fileName, resultString);
+    }
+
+    public void pullCurrentErrors(String fileName) {
         AccessibilityNodeInfo node = getRootInActiveWindow();
 
         int numNodes = AccessibilityNodeInfoUtils.searchAllFromBfs(getApplicationContext(),
@@ -213,14 +241,31 @@ public class AccessibilityTestService extends AccessibilityService {
             Log.i(TAG, error.getInfo().toString());
             Log.i(TAG, error.getSourceCheckClass().toString());
             Log.i(TAG, error.getMessage().toString());
-            Log.i(TAG, error.getType().toString());
             Log.i(TAG, "----------");
         }
+
+        String resultString = "";
+        for (AccessibilityInfoCheckResult error:errors) {
+            resultString += error.getInfo().toString();
+            resultString += '\n';
+            resultString += error.getSourceCheckClass().toString();
+            resultString += '\n';
+            resultString += error.getMessage().toString();
+            resultString += '\n';
+        }
+
+        if (fileName!=null) writeToFile("Errors", fileName, resultString);
     }
 
-    public void writeToFile(String folder, String fileName, String content) {
-        File path = new File(getApplicationContext().getExternalFilesDir(null), folder);
-        Log.i(TAG, path.toString());
+    public void writeToFile(String type, String fileName, String content) {
+        String app = "NoPackageName";
+        if (packageName != null) app = packageName;
+
+        File path = new File(new File(getApplicationContext().getExternalFilesDir(null), app), type);
+        if (path.mkdirs()) {
+            Log.e(TAG, "Directory created");
+        }
+        Log.i(TAG, "File Path: " + path.toString());
         File file = new File(path, fileName);
         FileOutputStream stream;
         try {
@@ -331,24 +376,5 @@ public class AccessibilityTestService extends AccessibilityService {
         EDITABLE_CONTENT_DESC,
         DUPLICATE_CLICKABLE_BOUNDS,
         TOUCH_TARGET_SIZE;
-    }
-
-    private void printAllNodes(AccessibilityNodeInfo info, AccessibilityNodeInfo parent) {
-        if (info == null) return;
-        if (info.getChildCount() == 0) {
-            Log.i(TAG, "TREE_RESULT -> " + "Leaf Node = " + info.toString());
-            Rect bounds = new Rect();
-            info.getBoundsInScreen(bounds);
-            Log.i(TAG, "Node Center Coordinate -> x = " + bounds.centerX() + ", y = " + bounds.centerY());
-            if (parent != null) Log.i(TAG, "Parent Node is " + parent.toString());
-        } else {
-            Log.i(TAG, "TREE_RESULT -> " + "Non-leaf Node = " + info.toString());
-            Rect bounds = new Rect();
-            info.getBoundsInScreen(bounds);
-            Log.i(TAG, "Node Center Coordinate -> x = " + bounds.centerX() + ", y = " + bounds.centerY());
-            for (int i = 0; i < info.getChildCount(); i++) {
-                printAllNodes(info.getChild(i), info);
-            }
-        }
     }
 }
