@@ -261,7 +261,7 @@ public class AccessibilityTestService extends AccessibilityService {
         String app = "NoPackageName";
         if (packageName != null) app = packageName;
 
-        File path = new File(new File(getApplicationContext().getExternalFilesDir(null), app), type);
+        File path = new File(new File(getApplicationContext().getFilesDir(), app), type);
         if (path.mkdirs()) {
             Log.e(TAG, "Directory created");
         }
