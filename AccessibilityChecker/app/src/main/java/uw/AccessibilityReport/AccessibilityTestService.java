@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.Rect;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.util.Log;
@@ -261,7 +262,7 @@ public class AccessibilityTestService extends AccessibilityService {
         String app = "NoPackageName";
         if (packageName != null) app = packageName;
 
-        File path = new File(new File(getApplicationContext().getFilesDir(), app), type);
+        File path = new File(new File(Environment.getExternalStorageDirectory().getAbsolutePath(), app), type);
         if (path.mkdirs()) {
             Log.e(TAG, "Directory created");
         }
