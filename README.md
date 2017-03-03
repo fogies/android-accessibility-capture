@@ -10,12 +10,12 @@
 ### Pull accessibility tree of current screen
 <b>./adb shell am broadcast -a xiaoyiz.pullCurrentTree</b> will print in command line
 
-<b>./adb shell am broadcast -a xiaoyiz.pullCurrentTree --es fileName xxxFileName</b> will save file in local storage /data/data/uw.AccessibilityReport/files/xxx.Package.Name/<b>Tree</b>/xxxFileName
+<b>./adb shell am broadcast -a xiaoyiz.pullCurrentTree --es fileName xxxFileName</b> will save file in local storage /storage/emulated/0/xxx.Package.Name/<b>Tree</b>/xxxFileName
 
 ### Pull accessibility errors of current screen
 <b>./adb shell am broadcast -a xiaoyiz.pullCurrentErrors</b> will print in command line
 
-<b>./adb shell am broadcast -a xiaoyiz.pullCurrentErrors --es fileName xxxFileName</b> will save file in local storage /data/data/uw.AccessibilityReport/files/xxx.Package.Name/<b>Error</b>/xxxFileName
+<b>./adb shell am broadcast -a xiaoyiz.pullCurrentErrors --es fileName xxxFileName</b> will save file in local storage /storage/emulated/0/xxx.Package.Name/<b>Error</b>/xxxFileName
 
 ### Pull an element on screen
 1. Use "\ " as space between words
